@@ -29,12 +29,12 @@ namespace sudoku {
 	}
 	
 	
-	void checkBox(int boxCollumn,int boxPillar){
+	void checkBox(){
 		std::set<char> list;
-		for(int coll=boxCollumn*3-1;coll<3;coll++){
-			for(int pillar=boxPillar*3-1;pillar<(boxPillar+1)*3;pillar++){
-				if(map[coll][pillar] != ' '){
-					list.insert(map[coll][pillar]);
+		for(int i=0;i<9;i++){
+			for(int j=0;j<9;j++){
+				if(map[i][j] != ' '){
+					list.insert(map[i][j]);
 				}	
 			}
 		}
@@ -45,7 +45,7 @@ namespace sudoku {
 	
 	
 	bool checkWin(){
-		if(correct == 2){
+		if(correct == 27){
 			return true;
 		}
 		return false;

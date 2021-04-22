@@ -42,15 +42,13 @@ namespace sudoku{
 				move(y,x-'1',choice);
 				
 				checkStart();
+				
+				
 				for(int i=0;i<9;i++){
 					checkPillar(i);
 					checkCollumn(i);
 				}
-				for(int i=0;i<3;i++){
-					for(int j=0;j<3;j++){
-						checkBox(i,j);
-					}
-				}
+				checkBox();
 				if(checkWin()){
 					break;
 				}
